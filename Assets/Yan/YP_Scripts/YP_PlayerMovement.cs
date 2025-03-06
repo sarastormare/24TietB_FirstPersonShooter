@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class JP_Movement : MonoBehaviour
+public class YP_PlayerMovement : MonoBehaviour
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float speed = 5.0f;
     public float jumpHeight = 2.0f;
 
@@ -18,7 +19,7 @@ public class JP_Movement : MonoBehaviour
 
     private bool isGrounded;
 
-    private float gravity = -7.81f;
+    private float gravity = -9.81f; // You may need to adjust this to simulate physics
 
 
 
@@ -29,7 +30,6 @@ public class JP_Movement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
 
         cameraTransform = Camera.main.transform;
-
         if (groundCheck == null)
 
         {
@@ -41,7 +41,6 @@ public class JP_Movement : MonoBehaviour
             return;
 
         }
-
 
     }
 
@@ -66,8 +65,8 @@ public class JP_Movement : MonoBehaviour
 
         {
 
-            velocity.y = -2f; // pidä hahmo maassa
-
+            velocity.y = -2f; //Keep the character on the ground
+        
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -82,8 +81,7 @@ public class JP_Movement : MonoBehaviour
 
 
 
-        forwardDirection.y = 0; // niin ettei pelaaja lähde lentämään y akselilla.
-
+        forwardDirection.y = 0; //so that the player doesn't start flying on the y-axis.
         rightDirection.y = 0;
 
 
@@ -101,7 +99,8 @@ public class JP_Movement : MonoBehaviour
 
 
         characterController.Move(movement);
-        // hyppy logiikka
+
+         //Jumping logic
 
         if (Input.GetButtonDown("Jump") && isGrounded)
 
@@ -122,8 +121,4 @@ public class JP_Movement : MonoBehaviour
 
 
     }
-
-
-
 }
-
