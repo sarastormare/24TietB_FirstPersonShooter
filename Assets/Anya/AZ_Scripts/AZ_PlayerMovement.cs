@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SL_PlayerMovement
+public class AZ_PlayerMovement
 {
     
 }
