@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &954517629
+--- !u!1 &345539810
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,24 +127,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 954517630}
+  - component: {fileID: 345539811}
   m_Layer: 0
-  m_Name: Ground Check
+  m_Name: Ground check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &954517630
+--- !u!4 &345539811
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954517629}
+  m_GameObject: {fileID: 345539810}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.87755966, y: -1.007301, z: 0.48390675}
+  m_LocalPosition: {x: -0.05, y: -0.96, z: 0.065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,8 +162,8 @@ GameObject:
   - component: {fileID: 1063596121}
   - component: {fileID: 1063596120}
   - component: {fileID: 1063596123}
-  - component: {fileID: 1063596119}
   - component: {fileID: 1063596118}
+  - component: {fileID: 1063596119}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -183,13 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc213f663fee82244a4ca8ad6bf34a01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   jumpHeight: 2
   groundDistance: 0.4
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1
-  groundCheck: {fileID: 954517630}
+    m_Bits: 8
+  groundCheck: {fileID: 345539811}
 --- !u!136 &1063596119
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -279,8 +279,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 345539811}
   - {fileID: 1671738720}
-  - {fileID: 954517630}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1063596123
@@ -516,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 1671738717}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.9817435, z: 0.19020936, w: 0}
-  m_LocalPosition: {x: -0.23999977, y: 3.22, z: 7.11}
+  m_LocalPosition: {x: -0.09, y: 0.38, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 1852769551}
   - component: {fileID: 1852769550}
   - component: {fileID: 1852769549}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
