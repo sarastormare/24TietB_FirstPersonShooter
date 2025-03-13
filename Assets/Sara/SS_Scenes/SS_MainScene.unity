@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 79875952}
   - component: {fileID: 79875951}
   - component: {fileID: 79875950}
+  - component: {fileID: 79875953}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +212,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &79875953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79875949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0fa432c66e2c4780061a5c4d03f7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
 --- !u!1 &403181310
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +336,7 @@ GameObject:
   - component: {fileID: 632519174}
   - component: {fileID: 632519180}
   - component: {fileID: 632519179}
+  - component: {fileID: 632519181}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -465,6 +480,24 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &632519181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632519173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d7c9075caea9f4484ff1b30b91937b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 100
+  damage: 25
+  fpsCamera: {fileID: 0}
+  shootingLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1741058099
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,5 +644,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 79875952}
   - {fileID: 403181312}
-  - {fileID: 1861410621}
   - {fileID: 632519177}
+  - {fileID: 1861410621}
