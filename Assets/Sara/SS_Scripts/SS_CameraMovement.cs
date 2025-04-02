@@ -5,21 +5,17 @@ public class SS_CameraMovement : MonoBehaviour
     public float mouseSensitivity = 100.0f;
     private Transform playerBody;
     private float xRotation = 0.0f;
-    private void Start()
 
+    private void Start()
     {
         playerBody = transform.parent;
         Cursor.lockState = CursorLockMode.Locked;
     }
-
     private void Update()
-
     {
         RotateCamera();
     }
-
     private void RotateCamera()
-
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;

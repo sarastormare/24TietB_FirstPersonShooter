@@ -25,12 +25,10 @@ public class SS_PlayerMovement : MonoBehaviour
             return;
         }
     }
-
     private void Update()
     {
         MovePlayer();
     }
-
     private void MovePlayer()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
@@ -48,21 +46,20 @@ public class SS_PlayerMovement : MonoBehaviour
 
         forwardDirection.y = 0; // so that the player doesn't fly on the y axis.
         rightDirection.y = 0;
-
         forwardDirection.Normalize();
         rightDirection.Normalize();
 
         Vector3 desiredDirection = (forwardDirection * vertical + rightDirection * horizontal).normalized;
         Vector3 movement = desiredDirection * speed * Time.deltaTime;
         characterController.Move(movement);
+        
         // jump logic
-
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        // velocity.y += Gravity * Time.deltaTime;
+        velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
     }
 }

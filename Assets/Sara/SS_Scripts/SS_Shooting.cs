@@ -24,18 +24,17 @@ public class SS_Shooting : MonoBehaviour
             // Debugging, drawing a drawray when hitting an object
             Debug.DrawRay(fpsCamera.transform.position, fpsCamera.transform.forward * range, Color.red, 2.0f);
             // check if the object is hittable
-            IDamageable damageable = hit.transform.GetComponent<IDamageable>();
+            IDamageableSS damageable = hit.transform.GetComponent<IDamageableSS>();
 
             if (damageable != null)
             {
                 damageable.TakeDamage(damage);
             }
-
         }
-
     }
-    public interface IDamageableSS
-    {
-        void TakeDamage(float damageAmount);
-    }
+}
+// here we make the interface now
+public interface IDamageableSS
+{
+    void TakeDamage(float damageAmount);
 }
